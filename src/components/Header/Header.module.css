@@ -1,0 +1,28 @@
+.header{
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 30px;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    height: 100px;
+    margin: 0 auto ;
+    align-items: center;
+    background-color: rgb(129, 214, 240);
+    
+    
+}
+.title{
+    font-size: 30px;
+    color: white;
+    margin: 0;
+}
+
+.content{
+    background-color: white;
+    height: 300px;
+    max-height: 500px;
+}
