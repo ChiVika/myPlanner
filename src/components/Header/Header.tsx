@@ -1,6 +1,10 @@
+import type { ReactNode } from 'react';
 import styles from './Header.module.css';
 
-function Header() {
+export interface HeaderProps {
+  children: ReactNode;
+}
+function Header({children}: HeaderProps) {
 
 
   return (
@@ -9,9 +13,7 @@ function Header() {
         <div className={styles['block']}>
             <h1 className={styles['title']}>Мой планер</h1>
         </div>
-        <div className={styles['content']}>
-            задачи
-        </div>
+        {children}
     </div>
       
     </>

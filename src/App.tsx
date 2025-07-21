@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Input from './components/Input/Input';
 import ReadyTask from './components/ReadyTask/ReadyTask';
 import JournalList from './components/JournalList/JournalList';
+import Header from './components/Header/Header';
 export type Task = {
     id: number,
     title: string,
@@ -54,10 +55,7 @@ function App() {
   
   return (
     <>
-      <div className='header'>
-        <div className='block'>
-            <h1 className='title'>Мой планер</h1>
-        </div>
+      <Header>
         <div className='content'>
             <Input onAddTask={AddTask}/>
             <div className={'list'}>
@@ -67,8 +65,9 @@ function App() {
               <ReadyTask count={completedTask}/>
             </div>
         </div>
+      </Header>
         
-    </div>
+        
     </>
   )
 }
