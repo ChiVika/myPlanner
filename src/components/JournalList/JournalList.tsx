@@ -4,20 +4,23 @@ type Task = {
     title: string,
 }
 type JournalListProps = {
-    items: Task[]
+    items: Task[],
+    onCompletedTask: (id: number) => void
 }
-function JournalList({items}: JournalListProps) {
+
+function JournalList({items, onCompletedTask}: JournalListProps) {
+
+  const mySort = (a: { id: number }, b: { id: number }) => b.id - a.id;
   return (
     <>
-      <div className={styles['container']}>
-            {items.length > 0 ? items.map( item => (
+
+            {items.length > 0 ? items.sort(mySort).map( item => (
             <div key={item.id} className={styles['taskConteiner']}>
                 <p className={styles['task']} key={item.id}>{item.title}</p>
-                <button className={styles['done']}>+</button>
+                <button className={styles['done']} onClick={() => onCompletedTask(item.id)}>done</button>
             </div>
             
             )): (<>У вас пока нет записей</>)}
-      </div>
     </>
   )
 }

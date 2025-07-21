@@ -14,7 +14,3 @@
 .plan:focus{
     outline: none;
 }
-.list{
-    max-height: 200px;
-    overflow-x: auto;
-}
